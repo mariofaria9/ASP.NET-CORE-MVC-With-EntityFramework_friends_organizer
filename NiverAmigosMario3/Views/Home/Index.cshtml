@@ -1,0 +1,77 @@
+﻿@model Casamodel
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="a">
+    <h2>Gerenciador de Niver dos Amigos do Mario</h2>
+</div>
+
+<br />
+<br />
+<a href="/amigos/cadastraramigo" class="btn btn-success">Cadastrar um Amigo</a>
+<br />
+<br />
+<a href="/amigos/listaramigo" class="btn btn-dark">Listar, Editar ou Excluir um Amigo</a>
+
+<br />
+<br />
+<br />
+<br />
+<h4>Aniversariantes do Dia:</h4>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Nome</th>
+            <th scope="col">Sobrenome</th>
+            <th scope="col">Data de Nascimento</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var amigo in Model.amigosDoDia)
+        {
+            <tr>
+                <td>@amigo.Id</td>
+                <td>@amigo.Nome</td>
+                <td>@amigo.Sobrenome</td>
+                <td>@amigo.DataNascimento.ToShortDateString()</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<br />
+<br />
+<br />
+<h4>Lista ordenada de Aniversariantes:</h4>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Nome</th>
+            <th scope="col">Sobrenome</th>
+            <th scope="col">Data de Nascimento</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var amigo in Model.amigosOrdenados)
+        {
+            <tr>
+                <td>@amigo.Id</td>
+                <td>@amigo.Nome</td>
+                <td>@amigo.Sobrenome</td>
+                <td>@amigo.DataNascimento.ToShortDateString()</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<style>
+    div.a{
+        text-align:center;
+        color:orangered;
+    }
+</style>

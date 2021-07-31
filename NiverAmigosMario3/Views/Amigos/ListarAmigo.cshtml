@@ -1,0 +1,52 @@
+﻿@model List<NiverAmigosMario3.Models.Amigo>
+@{
+    var Amigos = Model;
+}
+
+<div class="a">
+    <h4>Lista de Amigos</h4>
+    <a href="/home">Retornar à Página Principal</a>
+</div>
+
+<br />
+<form action="/amigos/listaramigo" method="get">
+    <input type="text" name="pesquisa" placeholder="Pesquisa" />
+    <button type="submit" class="btn btn-primary btn-sm active" role="button" aria-pressed="true">Encontrar Amigo</button>
+</form>
+<p>**Clique abaixo em "Nome" para retornar a listagem completa.</p>
+<br />
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col"><a href="/amigos/listaramigo?ordenarpelonome=asc">Nome</a></th>
+            <th scope="col">Sobrenome</th>
+            <th scope="col">Data de Nascimento</th>
+            <th scope="col">O que deseja fazer?</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var amigo in Amigos)
+        {
+        <tr>
+            <td>@amigo.Id</td>
+            <td>@amigo.Nome</td>
+            <td>@amigo.Sobrenome</td>
+            <td>@amigo.DataNascimento.ToShortDateString()</td>
+            <td>
+                <a href="/amigos/editar?identificador=@amigo.Id" class="btn btn-secondary btn-sm active" role="button" aria-pressed="true">Editar</a>
+                <a href="/amigos/excluir?identificador=@amigo.Id" class="btn btn-danger btn-sm active" role="button" aria-pressed="true">Excluir</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
+
+<style>
+    div.a {
+        text-align: center;
+        color: orangered;
+    }
+</style>
+
+

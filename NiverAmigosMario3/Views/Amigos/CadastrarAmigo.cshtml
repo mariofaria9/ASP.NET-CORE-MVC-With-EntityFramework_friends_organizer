@@ -1,0 +1,31 @@
+﻿
+
+<div class="a">
+    <h3>Página de Cadastro de Amigo</h3>
+    <a href="/home">Retornar à Página Principal</a>
+</div>
+<br />
+
+<form action="/Amigos/ExecutarCadastroDeAmigo" method="post">
+    <div class="mb-3">
+        <label class="form-label">Nome</label>
+        <input type="text" class="form-control" placeholder="Nome do Amigo" name="nome">
+        <div class="form-text"></div>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Sobrenome</label>
+        <input type="text" class="form-control" placeholder="Sobrenome do Amigo" name="sobrenome">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">DataNascimento</label>
+        <input type="date" class="form-control" placeholder="Data de Nascimento" name="datanascimento">
+    </div>
+    <button type="submit" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Cadastrar</button>
+</form>
+
+<style>
+    div.a {
+        text-align: center;
+        color: orangered;
+    }
+</style>

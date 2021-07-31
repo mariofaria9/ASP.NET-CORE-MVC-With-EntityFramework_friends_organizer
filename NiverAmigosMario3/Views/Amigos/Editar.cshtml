@@ -1,0 +1,29 @@
+﻿@model NiverAmigosMario3.Models.Amigo
+@{
+    var amigo = Model;
+}
+Página de Edição de Amigo
+<br />
+
+<form action="/Amigos/Editar" method="post">
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Identificador</label>
+        <input type="text" class="form-control" id="" aria-describedby="emailHelp" name="identificador" value="@amigo.Id">
+        <div id="emailHelp" class="form-text"></div>
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Nome</label>
+        <input type="text" class="form-control" id="" aria-describedby="emailHelp" name="nome" value="@amigo.Nome">
+        <div id="emailHelp" class="form-text"></div>
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Sobrenome</label>
+        <input type="text" class="form-control" id="" name="sobrenome" value="@amigo.Sobrenome">
+    </div>
+    <div class="mb-3" id="datetimepicker5">
+        <label for="exampleInputPassword1" class="form-label">DataNascimento</label>
+        <input type="date" class="form-control" id="" name="datanascimento" value="@amigo.DataNascimento">
+    </div>
+    <button type="submit" class="btn btn-warning">Recadastrar</button>
+    <a href="/amigos/listaramigo">Retornar à Lista</a>
+</form>
